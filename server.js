@@ -30,6 +30,10 @@ app.post('/bfhl', (req, res) => {
 app.get('/bfhl', (req, res) => {
   res.json({ operation_code: 1 });
 });
+app.get('/', (req, res) => {
+  res.send('BFHL API is running. Use /bfhl endpoint for POST and GET requests.');
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = app;
